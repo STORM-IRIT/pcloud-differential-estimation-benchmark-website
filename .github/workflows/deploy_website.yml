@@ -25,8 +25,8 @@ jobs:
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.2.0
-        with:
-          cache: npm # optional
+        # with:
+          # cache: npm # optional
       
       - name: Install dependencies
         run: | 
