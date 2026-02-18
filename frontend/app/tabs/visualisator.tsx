@@ -18,7 +18,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../com
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
 const isStatic: boolean = process.env.STATIC_BUILD === 'true';
-const repoName: string = 'PCDiff';
+const repoName: string = 'pcloud-differential-estimation-benchmark-website';
 
 const datasets: string[] = ['DGtal', 'DGtal_helios', 'ABC', 'ABC_helios', 'PCPNet'];
 

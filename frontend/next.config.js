@@ -1,6 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production'
 const isStatic = process.env.STATIC_BUILD === 'true'
-const repoName = 'PCDiff'
+const repoName = 'pcloud-differential-estimation-benchmark-website'
 
 module.exports = {
   assetPrefix: isProd && !isStatic ? `/${repoName}/` : '',

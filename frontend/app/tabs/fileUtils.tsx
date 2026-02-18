@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const isProd = process.env.NODE_ENV === 'production';
 const isStatic = process.env.STATIC_BUILD === 'true';
-const repoName = 'PCDiff';
+const repoName = 'pcloud-differential-estimation-benchmark-website';
 
 // Fonction pour obtenir le chemin de base
 const getBasePath = () => {

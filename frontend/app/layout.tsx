@@ -7,8 +7,8 @@ import { ThemeProvider } from "./components/ui/theme-provider"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PCDiff",
-  description: "An analysis of differential property estimators on point clouds.",
+  title: "Survey on differential estimators for 3d point clouds",
+  description: "Companion website for the Eurographcs 2026 Survey.",
 };
 
 export default function RootLayout({
