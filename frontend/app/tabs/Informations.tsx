@@ -4,6 +4,11 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
 
+const isProd: boolean = process.env.NODE_ENV === 'production';
+const isStatic: boolean = process.env.STATIC_BUILD === 'true';
+const repoName: string = 'pcloud-differential-estimation-benchmark-website';
+
+
 // const references = [
 //     {
 //       id: 1,
@@ -35,30 +40,36 @@ const teaser_caption = (
 );
 
 const Informations: React.FC = () => {
+  const base: string = isProd && !isStatic ? `/${repoName}` : '';
   const teaser = {
-    url: "/Teaser.png",
+    url: `${base}/Teaser.png`,
     caption: teaser_caption,
+
   };
 
   const title = "Survey on differential estimators for 3d point clouds";
 
-//   const authors = [
-//     { name: "Nom1", affiliationIndex: [1] },
-//     { name: "Nom2", affiliationIndex: [1, 2] },
-//     { name: "Nom3", affiliationIndex: [2] },
-//   ]; 
- 
-// const affiliations = [
-//   { index: 1, name: "UNIVERSITY, COUNTRY" },
-//   { index: 2, name: "LABO 1" },
-// ];
   const authors = [
-    { name: "Submission id: 1001", affiliationIndex: [] },
+    { name: "Léo Arnal--Anger", affiliationIndex: [1] },
+    { name: "Thibault Lejemble", affiliationIndex: [2] },
+    { name: "David Coeurjolly", affiliationIndex: [3] },
+    { name: "Loïc Barthe", affiliationIndex: [1] },
+    { name: "Nicolas Mellado", affiliationIndex: [1] },
   ]; 
-
-  const affiliations: any[] = [
-    // { index: 1, name: "" },
+ 
+  const affiliations = [
+    { index: 1, name: "IRIT, Université de Toulouse, CNRS, Toulouse INP, UT, Toulouse, France" },
+    { index: 2, name: "Cerema, Toulouse, France" },
+    { index: 3, name: "CNRS, Université Claude Bernard Lyon 1, INSA Lyon, LIRIS, France" },
   ];
+
+  // const authors = [
+  //   { name: "Submission id: 1001", affiliationIndex: [] },
+  // ]; 
+
+  // const affiliations: any[] = [
+  //   // { index: 1, name: "" },
+  // ];
 
 const abstract = (
     <>
