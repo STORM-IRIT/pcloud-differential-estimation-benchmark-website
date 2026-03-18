@@ -134,7 +134,7 @@ export default function Home() {
                 <br/>
                 Due to the nature of the ABC and ABC_helios datasets, <span className="font-bold">no ground truth is available</span> for these models; consequently, ground-truths and error metrics cannot be displayed for these figures.
                 <br/>
-                In order to meet the submission upload requirements, <span className="font-bold">only a limited set of parameters is available</span> for visualization, as well as only <span className="font-bold">3 shapes per dataset</span>.
+                In order to meet the static nature of the web interface, <span className="font-bold">only a limited set of parameters is available</span> for visualization, as well as only <span className="font-bold">3 shapes per dataset</span>.
                 <br/>
                 Currently, users can display <span className="font-bold">mean and Gaussian curvatures</span>. Only estimators capable of computing these properties are included in the dropdown menus.
               </p>
