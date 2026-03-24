@@ -395,22 +395,25 @@ export function DataViewer({
               if (data) {
                 let localY: number[] = [];
                 const newPlotData = Object.entries(data).map(([method, values]) => {
-                  localY = localY.concat(values[1]); 
-                  const showLegend = !methodList.includes(method);
-                  if (showLegend) methodList.push(method);
-                  return {
-                    x: values[0],
-                    y: values[1],
-                    type: 'scatter',
-                    mode: 'lines+markers',
-                    name: method,
-                    marker: { color: colorMap[method] || '#000000' },
-                    showlegend: showLegend,
-                    legendgroup: method,
-                    xaxis: `x${i * yAxes.length + j + 1}`,
-                    yaxis: `y${i * yAxes.length + j + 1}`,
-                  };
-                });
+		  const safeY = values[1].map((v: number | null) => (v !== null && v <= 0) ? null : v);
+		  const validY = safeY.filter((v: number | null) => v !== null && v !== undefined) as number[];
+		  localY = localY.concat(validY); 
+		  const showLegend = !methodList.includes(method);
+		  if (showLegend) methodList.push(method);
+		  return {
+		    x: values[0],
+		    y: safeY,
+		    type: 'scatter',
+		    mode: 'lines+markers',
+		    connectgaps: true,
+		    name: method,
+		    marker: { color: colorMap[method] || '#000000' },
+		    showlegend: showLegend,
+		    legendgroup: method,
+		    xaxis: `x${i * yAxes.length + j + 1}`,
+		    yaxis: `y${i * yAxes.length + j + 1}`,
+		  };
+		});
                 allPlots.data = allPlots.data.concat(newPlotData);
 
                 if (localY.length > 0) {

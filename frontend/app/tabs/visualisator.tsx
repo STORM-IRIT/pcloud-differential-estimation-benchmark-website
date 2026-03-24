@@ -303,7 +303,7 @@ const DoubleSlider: React.FC<DoubleSliderProps> = ({ min, max, step, value, disp
           </span>
         ))}
         <span className="absolute left-1/2 transform -translate-x-1/2">
-          {displayError ? "RMS Error" : "Absolute Estimation"}
+          {displayError ? "Absolute Error" : "Absolute Estimation"}
         </span>
       </div>
     </div>
