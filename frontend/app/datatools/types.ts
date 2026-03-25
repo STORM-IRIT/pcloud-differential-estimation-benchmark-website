@@ -1,6 +1,6 @@
 
 export interface PlotDataType {
-  [method: string]: [number[] | string[], number[]];
+  [method: string]: [(number | string)[], (number | null)[]];
 }
 
 export interface PlotDataSet {
