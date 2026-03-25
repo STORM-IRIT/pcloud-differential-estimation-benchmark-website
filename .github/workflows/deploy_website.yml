@@ -40,9 +40,9 @@ jobs:
           cd frontend
           npm run build-simple
 
-      # Deploy only when merging the pull request
+      # Deploy only when pushing on master
       - name: Deploy Github Pages
-        if: ${{ github.event.pull_request.merged == true }}
+        if: ${{ github.event.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
