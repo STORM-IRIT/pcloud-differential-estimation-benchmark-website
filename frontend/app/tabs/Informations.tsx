@@ -9,12 +9,6 @@ const isStatic: boolean = process.env.STATIC_BUILD === 'true';
 const repoName: string = 'pcloud-differential-estimation-benchmark-website';
 
 
-// const references = [
-//     {
-//       id: 1,
-//       text: "Mellado N., Marcadet Q., Espinasse L., Mora P., Dutailly B., Tournon-Valiente S., Granier X.: 3D-ARD: A 3d-acquired research dataset, June 2020.",
-//     },
-//   ];
 const references: any[] = [];
 
   const ref = (id: number) => (
@@ -63,13 +57,12 @@ const Informations: React.FC = () => {
     { index: 3, name: "CNRS, Université Claude Bernard Lyon 1, INSA Lyon, LIRIS, France" },
   ];
 
-  // const authors = [
-  //   { name: "Submission id: 1001", affiliationIndex: [] },
-  // ]; 
-
-  // const affiliations: any[] = [
-  //   // { index: 1, name: "" },
-  // ];
+  const resources = [
+    { label: "HAL", url: "https://hal.science/hal-05515309v1" },
+    { label: "PDF Download", url: "https://hal.science/hal-05515309v1/file/2026-Arnal-EG-survey.pdf"},
+    { label: "DOI", url: "https://dx.doi.org/10.1111/cgf.70394" },
+    { label: "Code", url: "https://github.com/STORM-IRIT/pcloud-differential-estimation-benchmark" },
+  ];
 
 const abstract = (
     <>
@@ -117,6 +110,20 @@ const abstract = (
           <div key={idx}>
             <sup>{aff.index}</sup> {aff.name}
           </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-3 mt-1">
+        {resources.map((resource, idx) => (
+          <a
+            key={idx}
+            href={resource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+          >
+            [{resource.label}]
+          </a>
         ))}
       </div>
 
