@@ -62,7 +62,8 @@ const Informations: React.FC = () => {
     { label: "PDF Download", url: "https://hal.science/hal-05515309v1/file/2026-Arnal-EG-survey.pdf"},
     { label: "DOI", url: "https://dx.doi.org/10.1111/cgf.70394" },
     { label: "Code", url: "https://github.com/STORM-IRIT/pcloud-differential-estimation-benchmark" },
-    { label: "Slides", url: `${base}/pcloud-differential-estimation-slides.pdf` },
+    { label: "Slides.pdf", url: `${base}/pcloud-differential-estimation-slides.pdf` },
+    { label: "Slides.pptx", url: `${base}/pcloud-differential-estimation-slides.pptx` },
   ];
 
 const abstract = (
